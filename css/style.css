@@ -262,6 +262,7 @@ aside{
 .responsive-aside .profile{
   display: flex;
   align-items: center;
+  color: var(--text_color--);
   margin: 20px;
 }
 .responsive-aside .profile .user-info h5,h6{
