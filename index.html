@@ -14,13 +14,13 @@
         <nav>
             <div class="navbar">
                 <div class="bars">
-                    <i class="fa-duotone fa-bars"></i>
-                    <i class="fa-duotone fa-close"></i>
+                    <i class="fa-duotone fa-bars" id="side-bars" onclick="slide_on()"></i>
+                    <a href="#index"><div class="logo" onclick="toggle()">
+                        <i class="fa-duotone fa-circle-nodes" id="toggle" ></i>
+                        <h5> R  T  C</h5>
+                    </div></a>
                 </div>
-                <a href="#index"><div class="logo" onclick="toggle()">
-                    <i class="fa-duotone fa-circle-nodes" id="toggle" ></i>
-                    <h5> R  T  C</h5>
-                </div></a>
+                
                 <div class="right-nav">
                     <div class="search-area">
                         <button><i class="fa-light fa-search"></i></button>
@@ -38,7 +38,26 @@
             </div>
         </nav>
         <div class="component">
+            <div class="responsive-aside">
+                <i class="fa-duotone fa-close" onclick="slide_off()"></i>
+                <hr>
+                <div class="profile">
+                    <img src="images/profile.jpg" alt="">
+                    <div class="user-info">
+                        <h5>Ras Selase</h5>
+                        <h6>D.S Ethiopia</h6>
+                    </div>
+                </div> 
+               
+                <ul>
+                    <li id="active"><a href="#"><i class="fa-solid fa-square-pen"></i>Project</a></li>
+                    <li><a href="#"><i class="fa-solid fa-image"></i>Task</a></li>
+                    <li><a href="#"><i class="fa-duotone fa-gear"></i>Setting</a></li>
+                    <li><a href="#"><i class="fa-duotone fa-arrow-right-from-bracket"></i>Logout</a></li>
+                </ul>
+            </div>
             <aside>
+                
                 <div class="sidebar">
                     <ul>
                         <li id="active"><a href="#"><i class="fa-solid fa-square-pen"></i>Project</a></li>

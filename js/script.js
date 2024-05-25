@@ -18,3 +18,16 @@ function toggle() {
      mode = "light";
   }
 }
+
+
+var responsive_aside = document.querySelector(".responsive-aside")
+
+function slide_on() {
+    responsive_aside.style.transition = " all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+    responsive_aside.style.transform = "translateX(-15%)";
+}
+
+function slide_off() {
+    responsive_aside.style.transition = " all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+   responsive_aside.style.transform = "translateX(-100%)";
+}
