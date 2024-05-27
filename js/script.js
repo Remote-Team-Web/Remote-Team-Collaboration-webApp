@@ -31,3 +31,24 @@ function slide_off() {
     responsive_aside.style.transition = " all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
    responsive_aside.style.transform = "translateX(-100%)";
 }
+
+
+const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.content .page a');
+    var pageName = "home";
+    navLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const pageName = event.target.dataset.page;
+        showPage(pageName);
+    });
+    });
+
+    function showPage(pageName) {
+    pages.forEach((page) => {
+        page.classList.remove('active');
+    });
+
+    const pageElement = document.getElementById(`${pageName}-page`);
+    pageElement.classList.add('active');
+    }

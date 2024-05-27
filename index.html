@@ -15,7 +15,7 @@
             <div class="navbar">
                 <div class="bars">
                     <i class="fa-duotone fa-bars" id="side-bars" onclick="slide_on()"></i>
-                    <a href="#index"><div class="logo" onclick="toggle()">
+                    <a href="#"><div class="logo" onclick="toggle()">
                         <i class="fa-duotone fa-circle-nodes" id="toggle" ></i>
                         <h5> R  T  C</h5>
                     </div></a>
@@ -69,15 +69,44 @@
             </aside>
            <main>
             <div class="content">
-                <h5>Project / Create Project</h5>
-                <div class="cards">
-                    <div class="card left-card"></div>
-                    <div class="card mid-card"></div>
-                    <div class="card right-card"></div>
+                <div class="page" id="home-page">
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li> 
+                    </ul>
+                    <div class="cards">
+                        <div class="card left-card"></div>
+                        <div class="card mid-card"></div>
+                        <div class="card right-card"></div>
+                        <div class="card left-card"></div>
+                        <div class="card mid-card"></div>
+                        <div class="card right-card"></div>
+                    </div>
+                    
+                    <button><a href="#" data-page="project">Project</a></button>
+                </div>
+                <div class="page active" id="project-page">
+                    <ul>
+                        <li><a href="#" data-page="home">Home &nbsp;</a></li>
+                        <li><a href="#" data-page="project"> / Project</a></li> 
+                    </ul>
+                    <div class="cards">
+                        <div class="card left-card" style="height: 440px;"></div>
+                    </div>
 
-                    <div class="card left-card"></div>
-                    <div class="card mid-card"></div>
-                    <div class="card right-card"></div>
+                    <button><a href="#" data-page="create-project">Create Project</a></button>
+                </div>
+
+                <div class="page" id="create-project-page">
+                    <ul>
+                        <li><a href="#" data-page="home">Home &nbsp;</a></li>
+                        <li><a href="#" data-page="project"> / Project &nbsp;</a></li>
+                        <li><a href="#" data-page="create-project"> / Create Project</a></li>
+                    </ul>
+                    <div class="cards">
+                        <div class="card left-card" style="height: 440px;"></div>
+                        <div class="card left-card" style="height: 440px;"></div>
+                        <div class="card left-card" style="height: 440px;"></div>
+                    </div>
                 </div>
             </div>
            </main>
