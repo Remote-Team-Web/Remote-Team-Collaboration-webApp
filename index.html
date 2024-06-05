@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <title>Remote-TC</title>
+  </head>
+
+  <body>
+
+    <div class="content-area">
+      <nav>
+        <div class="navbar">
+          <div class="bars">
+            <i
+              class="fa-duotone fa-bars"
+              id="side-bars"
+              onclick="slide_on()"
+            ></i>
+            <a href="#"
+              ><div class="logo" onclick="toggle()">
+                <i class="fa-duotone fa-circle-nodes" id="toggle"></i>
+                <h5>R T C</h5>
+              </div></a
+            >
+          </div>
+
+          <div class="right-nav">
+            <div class="search-area">
+              <button><i class="fa-light fa-search"></i></button>
+              <input type="text" placeholder="Search" />
+            </div>
+            <button><i class="fa-light fa-bell"></i></button>
+            <div class="profile">
+              <div class="user-info">
+                <h5>Ras Selase</h5>
+                <h6>D.S Ethiopia</h6>
+              </div>
+              <img src="images/profile.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="component">
+        <div class="responsive-aside">
+          <i class="fa-duotone fa-close" onclick="slide_off()"></i>
+          <hr />
+          <div class="profile">
+            <img src="images/profile.jpg" alt="" />
+            <div class="user-info">
+              <h5>Ras Selase</h5>
+              <h6>D.S Ethiopia</h6>
+            </div>
+          </div>
+
+          <ul>
+            <li id="active">
+              <a href="#"><i class="fa-solid fa-square-pen"></i>Project</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-image"></i>Task</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-duotone fa-gear"></i>Setting</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-duotone fa-arrow-right-from-bracket"></i>Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+        <aside>
+          <div class="sidebar">
+            <ul>
+              <li id="active">
+                <a href="#"><i class="fa-solid fa-square-pen"></i>Project</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-image"></i>Task</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-duotone fa-gear"></i>Setting</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-duotone fa-arrow-right-from-bracket"></i
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <main>
+          <div class="content">
+            <div class="page" id="home-page">
+              <ul>
+                <li><a href="#" data-page="home">Project</a></li>
+              </ul>
+              <div class="cards">
+                <div class="card left-card">
+                  <div class="name-div">
+                    <h4>chapi <span> <i class="fa fa-edit"></i></span></h4>
+                    <h4 class="offtrack-text">offtrack</h4>
+                  </div>
+                  <div class="name-description">
+                    <p>Front-end development involves creating the visual and interactive aspects of 
+                      a website or web application using HTML, CSS, and JavaScript to ensure a seamless user experience.</p>
+                  </div>
+                  <h3 class="clock">38 MAY 3034</h3>
+                  <div class="project-footer">
+                    <div class="team">
+                        <img src="images/man (1).png" alt="Avatar">
+                        <img src="images/man.png" alt="Avatar">
+                        <img src="images/profile.jpg" alt="Avatar">
+                        <span>+3</span>
+                    </div>
+                    <span class="issues"><i>14</i> issues</span>
+                  </div>
+                </div>
+                <div class="card mid-card"></div>
+                <div class="card right-card"></div>
+                <div class="card left-card"></div>
+                <div class="card mid-card"></div>
+                <div class="card right-card"></div>
+              </div>
+
+              <button>
+                <a href="#" data-page="project">Create Project</a>
+              </button>
+            </div>
+            <!-- changes -->
+            <div div class="page active" id="project-page">
+              <ul>
+                <li><a href="#" data-page="home">Home &nbsp;</a></li>
+                <li><a href="#" data-page="project"> / Create Project</a></li>
+              </ul>
+              <div class="cards">
+                <div class="card left-card" style="height: 440px">
+                  <div class="form-section">
+                    <div class="form-group">
+                      <label for="project-title">Project Title</label>
+                      <input type="text" id="project-title" value="Addodle">
+                    </div>
+                    <div class="form-group">
+                      <label for="project-type">Project Type</label>
+                      <input type="text" id="project-type" value="Type - I">
+                    </div>
+                    <div class="form-group">
+                      <label for="start-date">Start Date</label>
+                      <input type="date" id="start-date" value="2022-05-01">
+                    </div>
+                    <div class="form-group">
+                      <label for="end-date">End Date</label>
+                      <input type="date" id="end-date" value="2022-12-01">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="project-description">Project Description</label>
+                    <textarea id="project-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</textarea>
+                  </div>
+
+                  <div class="role-create-delete">
+                    <div class="form-group">
+                      <label for="project-roles">Project Roles</label>
+                      <select id="project-roles">
+                        <option>Team Lead</option>
+                        <option>Yash - Team lead</option>
+                        <option>Yash - Team lead</option>
+                        <option>Yash - Team lead</option>
+                        <option>Yash - Team lead</option>
+                        <option>Yash - Team lead</option>
+                        <option>Yash - Team lead</option>
+                      </select>
+                    </div>
+
+                    <div class="button-group">
+                      <button class="create">Create</button>
+                      <button class="delete">Delete</button>
+                    </div>
+                  </div>
+                  <button>
+                    <a href="#" data-page="create-project">Create Project</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="page" id="create-project-page">
+              <ul>
+                <li><a href="#" data-page="home">Home &nbsp;</a></li>
+                <li><a href="#" data-page="project"> / Project &nbsp;</a></li>
+                <li>
+                  <a href="#" data-page="create-project"> / Create Project</a>
+                </li>
+              </ul>
+              <div class="cards">
+                <div class="card left-card" style="height: 440px"></div>
+                <div class="card left-card" style="height: 440px"></div>
+                <div class="card left-card" style="height: 440px"></div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

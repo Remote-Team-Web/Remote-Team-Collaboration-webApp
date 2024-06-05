@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>RTC task</title>
+</head>
+<body>
+    <div class="content-area">
+        <nav>
+          <div class="navbar">
+            <div class="bars">
+              <i
+                class="fa-duotone fa-bars"
+                id="side-bars"
+                onclick="slide_on()"
+              ></i>
+              <a href="#"
+                ><div class="logo" onclick="toggle()">
+                  <i class="fa-duotone fa-circle-nodes" id="toggle"></i>
+                  <h5>R T C</h5>
+                </div></a
+              >
+            </div>
+  
+            <div class="right-nav">
+              <div class="search-area">
+                <button><i class="fa-light fa-search"></i></button>
+                <input type="text" placeholder="Search" />
+              </div>
+              <button><i class="fa-light fa-bell"></i></button>
+              <div class="profile">
+                <div class="user-info">
+                  <h5>Ras Selase</h5>
+                  <h6>D.S Ethiopia</h6>
+                </div>
+                <img src="images/profile.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="component">
+          <div class="responsive-aside">
+            <i class="fa-duotone fa-close" onclick="slide_off()"></i>
+            <hr />
+            <div class="profile">
+              <img src="images/profile.jpg" alt="" />
+              <div class="user-info">
+                <h5>Ras Selase</h5>
+                <h6>D.S Ethiopia</h6>
+              </div>
+            </div>
+          </div>
+          <aside>
+            <div class="sidebar">
+              <ul>
+                <li id="active">
+                  <a href="#"><i class="fa-solid fa-square-pen"></i>Project</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-image"></i>Task</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-duotone fa-gear"></i>Setting</a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-duotone fa-arrow-right-from-bracket"></i
+                    >Logout</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <main>
+            <div class="container">
+                <h2>Tasks</h2>
+                <div class="content">
+                    <div class="overview">
+                        <h3>overview</h3>
+                    </div>
+                    <div class="tasks">
+                      <div class="search-listview">
+                          <div class="search-project">
+                              <button><i class="fa-light fa-search"></i></button>
+                              <input type="search" placeholder="search project" class="search-input">
+                          </div>
+                          <div class="list-view">
+                            <select class="select-list-view">
+                              <option>horzontal</option>
+                              <option>vertical</option>
+                            </select>
+                          </div>
+                      </div>
+
+                      <div class="projects">
+                        <div class="task-list">
+                          <div class="stage">
+                            <p>Backlog</p>
+                            <button><i class="fa fa-ellipsis"></i></button>
+                          </div>
+                          <div class="task-add">
+                            <button><i class="fa fa-plus"></i></button>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>Food Research</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Food designing is required for our new project lets search beter experience</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>Mockups</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Create 12 mockups for music in iphone 12 pro max</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>UI Animation</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Micro interaction loading and progress, Story telling, Navigation</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="task-list">
+                          <div class="stage">
+                            <p>In Progress</p>
+                            <button><i class="fa fa-ellipsis"></i></button>
+                          </div>
+                          <div class="task-add">
+                            <button><i class="fa fa-plus"></i></button>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>User Interface</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Design new user interface design for food delivery app</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>Usability Testing</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Perform the usability testing for the neely develop app</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>Food Research</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Food designing is required for our new project lets search beter experience</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="task-list">
+                          <div class="stage">
+                            <p>Completed</p>
+                            <button><i class="fa fa-ellipsis"></i></button>
+                          </div>
+                          <div class="task-add">
+                            <button><i class="fa fa-plus"></i></button>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>Mind Mapping</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Mind mapping for the food delivery app for by targeting young users</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>Food Research</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Food designing is required for our new project lets search beter experience</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="task-type">
+                            <div class="task-name">
+                              <p>User Feedback</p>
+                              <i class="fa fa-clock"> 12 Days</i>
+                            </div>
+                            <div class="task-description">
+                              <p>Perform the user survey and take necessayr steps to dolve their problem with existing one</p>
+                            </div>
+                            <div class="comment">
+                              <div>
+                                <i class="fa fa-cog"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div>
+                                <i class="fa fa-comment"><span id="number-of-comments">  3</span></i>
+                              </div>
+                              <div class="div-avatars">
+                                <i class="fa fa-plus"></i>
+                                <div class="team">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                  <img src="images/man.png" alt="avatar1">
+                                  <img src="images/man (1).png" alt="avatar1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <script src="js/script.js"></script>
+</body>
+</html>
