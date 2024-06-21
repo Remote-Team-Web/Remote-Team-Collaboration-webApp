@@ -1,0 +1,146 @@
+
+:root {
+  --body-bg-color: #e5ecef;
+  --theme-bg-color: #fff;
+  --border-color: #eef2f4;
+  --body-color: #273346;
+  --chat-text-bg: #f1f2f6;
+  --theme-color: #444444;
+  --msg-date: #c0c7d2;
+  --button-bg-color: #f0f7ff;
+  --theme-color: #444444;
+  --button-color: var(--theme-color);
+}
+
+.dark-mode {
+  --body-bg-color: #1d1d1d;
+  --border-color: #323336;
+  --body-color: #d1d1d2;
+  --chat-text-bg: #383b40;
+  --chat-text-color: #b5b7ba;
+  --button-bg-color: #393b40;
+  --button-color: var(--body-color);
+}
+
+.tasks{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  scale: 0.9;
+}
+
+.tasks .task-list{
+  border: 2px dashed rgba(176, 176, 176, 0.454);
+  border-radius: 20px;
+  background: none;
+  overflow: auto;
+  scroll-behavior: smooth;
+  max-height: 490px;
+}
+
+.tasks .task-list::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 25px;
+  margin: 20px 0;
+}
+.tasks .task-list::-webkit-scrollbar-track{
+  background: #f1f1f1d7;
+}
+.tasks .task-list::-webkit-scrollbar-thumb{
+  background: #7070707d;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.tasks .task-list::-webkit-scrollbar-thumb:hover{
+  background: #787878;
+}
+.task-list .stage{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 0 5px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;  
+}
+
+.task-list .stage button{
+  border: none;
+  background: none;
+  color: var(--button-color);
+}
+
+.task-add{
+  margin: 5px 10px;
+  border: 2px dashed rgba(176, 176, 176, 0.454);
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.5s;
+}
+.task-add:hover{
+  background: rgb(92, 218, 115);
+}
+.task-add button{
+  border: none;
+  font-size: larger;
+  background: none;
+  color: var(--button-color);
+}
+
+.task-list .task-type{
+  display: block;
+  padding: .5rem;
+  border: 1px solid rgba(176, 176, 176, 0.454);
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 2.5%;
+  transition: 0.3s;
+}
+.task-list .task-type:hover{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.377);
+}
+
+.task-list .task-type .task-name{
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-list .task-type .task-name i{
+  font-size: small;
+  opacity: .8;
+  cursor: pointer;
+}
+
+.task-description{
+  font-size: small;
+  opacity: 0.5;
+  margin: 1rem 0;
+}
+
+.task-list .comment{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.comment .div-avatars{
+  display: flex;
+  justify-content:space-around;
+  margin-right: 2%;
+}
+.comment .team {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-right: -5px;
+  border: 2px solid white;
+  display: flex;
+  overflow: hidden;
+}
+.comment .team img {
+  width: 25px;
+}

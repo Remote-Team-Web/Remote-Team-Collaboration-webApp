@@ -214,3 +214,231 @@ aside .curve{
   font-size: 180px;
   transition: 2s;
 }
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.conversation-area,
+.detail-area {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.detail-area {
+  border-left: 1px solid var(--border-color);
+  margin-left: auto;
+  padding: 30px 30px 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-area {
+  flex-grow: 1;
+}
+.user-info {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.user-info i{
+  padding: 10px 25px;
+  font-size: 18px;
+  transition: 0.3s;
+  position: relative;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.user-info a{
+  text-decoration: none;
+  color: var(--button-color);
+}
+.user-info i::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -30px;
+  background-color: var(--button-bg-color);
+  transition: 0.5s;
+}
+.user-info i:hover::after{
+  bottom: -7px;
+}
+.user-info i h6{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  font-size: 10px;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  z-index: inherit;
+}
+.user-info i:hover{
+  background: rgba(170, 170, 170, 0.226);
+  border-radius: 5px;
+}
+.user-info i span{
+  margin-left: 5px;
+}
+.user-info .notification{
+  position: absolute;
+  padding: 10px;
+  width: 350px;
+  top: 70px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.192);
+  background-color: var(--button-bg-color);
+  color: var(--button-color);
+  border-radius: 10px;
+  z-index: 15;
+  transition: 0.5s;
+}
+.user-info .notification::before{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  transform: rotateZ(45deg);
+  z-index: -1;
+  right: 32%;
+  background-color: var(--button-bg-color);
+}
+.user-info .notification ul {
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+  max-height: 320px;
+}
+.user-info .notification ul::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 25px;
+}
+.user-info .notification ul::-webkit-scrollbar-track{
+  background: #f1f1f1d7;
+}
+.user-info .notification ul::-webkit-scrollbar-thumb{
+  background: #707070;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.user-info .notification ul::-webkit-scrollbar-thumb:hover{
+  background: #787878;
+}
+.user-info .notification ul li{
+  padding: 5px;
+  list-style: none;
+  font-size: 12px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-info .notification li:hover{    
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.192);
+}
+.user-info .notification ul span{
+  font-size: 12px;
+  color: gray;
+  right: 0;
+  text-align: center;
+}
+.logo {
+  width: 60px;
+  flex-shrink: 0;
+}
+.logo i {
+  width: 100%;
+}
+
+.user-settings {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.user-settings > * + * {
+  margin-left: 14px;
+}
+
+.drop-wrapper{
+  position: relative;
+}
+
+.drop-menu{
+  position: absolute;
+  z-index: 10;
+  transition:  all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+  scale: 0;
+}
+.user-log{
+  left: -100px;
+  width: 150px;
+  background: var(--theme-bg-color);
+}
+.not{
+  width: 700px;
+  top: -40px;
+  left: -270px;
+}
+.drop-menu.active{
+  scale: 1;
+}
+
+.drop-menu a{
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background: var(--theme-color);
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.3s;
+}
+.user-log a:hover{
+  background: rgba(94, 94, 94, 0.822);
+}
+.dark-light {
+  width: 22px;
+  height: 22px;
+  color: var(--settings-icon-color);
+  flex-shrink: 0;
+}
+.dark-light i {
+  width: 100%;
+  fill: transparent;
+  transition: 0.5s;
+}
+
+.user-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.settings {
+  color: var(--settings-icon-color);
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.conversation-area {
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
