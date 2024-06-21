@@ -14,3 +14,18 @@ colors.forEach(color => {
 toggleButton.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
+function popupDisplay(id) {
+  var element = document.getElementById(id);
+  if (element) {
+      element.style.display = "flex";
+      element.style.transition = "0.3s";
+  }
+}
+
+function popupDisplayNone(id) {
+  var element = document.getElementById(id);
+  if (element) {
+      element.style.display = "none";
+      element.style.transition = "0.3s";
+  }
+}
