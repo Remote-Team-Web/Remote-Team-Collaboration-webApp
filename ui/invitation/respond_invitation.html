@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respond to Invitation</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Respond to Invitation</h1>
+        <form id="respondInvitationForm">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="accepted">Accept</option>
+                <option value="declined">Decline</option>
+            </select>
+            <button type="submit">Submit Response</button>
+        </form>
+    </div>
+    <script src="../../js/PostRequest.js"></script>
+</body>
+</html>

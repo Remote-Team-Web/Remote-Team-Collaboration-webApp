@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RTC - APP</title>
+<link rel="stylesheet" href="ui/css/main.css">
+<link rel="stylesheet" href="ui/css/all.css">
+<link rel="stylesheet" href="ui/css/style.css">
+
+</head>
+<body>
+  <div class="update-user" id="popup">
+    <div class="container update">        
+        <div class="submit-form">
+            <h3><i class="fa-light fa-close" onclick="popupDisplayNone('popup')"></i></h3>
+            <div class="image profile-img">
+                <img src="ui/image/default.jpg" id="user_image">
+            </div>
+            <h4>Update Profile</h4>
+            <form id="updateProfileForm" enctype="multipart/form-data">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <label for="profile_image">Profile Image:</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+  </div>
+  <aside id="menu">
+    <div class="base" id="menu-trun-btn">
+      <div class="my-project">
+        <span>My Project</span>
+        <a href="project_list.html"><i class="fa-light fa-gear"></i></a>
+      </div>
+      <div class="work-on">
+        <span>Work on Project</span>
+        <a href="work-on-list.html"><i class="fa-light fa-gears"></i></a>
+      </div>
+      <div class="contact">
+        <span>Contact</span>
+        <a href="contact.html"><i class="fa-light fa-users"></i></a>
+      </div>
+    </div>
+    <div class="curve" id="gear-turn">
+      <i class="fa-light fa-gear"></i>
+    </div>
+  </aside>
+  <div class="app">
+    <div class="header">
+      <div class="logo">
+        <img src="ui/image/logo.png" alt="">
+      </div>
+      <div class="user-info">
+        <a href="home.html"><i class="fa-light fa-home"></i></a>
+        <i class="fa-light fa-bars" id="menubtn"></i>
+        <i class="fa-light fa-bell btn" data-target="#dropnot">
+            <h6 id="total"></h6>
+            <!-- <h6 id="total-msg">6</h6> -->
+            
+        </i>
+        <div class="drop-wrapper">
+          <div class="drop-menu dropdown not" id="dropnot">
+            <div class="notification">
+              <ul id="invitation">
+                  <li>No message yet <span>12:30 AM</span></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="user-settings">
+      <div class="dark-light">
+        <i class="fa-light fa-moon"></i>
+      </div>
+      <div class="settings" onclick="popupDisplay('popup')">
+        <i class="fa-light fa-gear"></i>
+      </div>
+      <div class="drop-wrapper">
+        <img class="user-profile btn" src="ui/image/default.jpg" data-target="#dropdown">
+        <div class="drop-menu dropdown user-log" id="dropdown">
+          <a href="./ui/user/logout.html">Logout</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="wrapper">
+        <div class="detail-area profile-detail">
+          <div class="detail-area-header">
+          <div class="msg-profile group">
+            <img src="ui/image/default.jpg" alt="">
+          </div>
+          <div class="detail-title">HGiorgis</div>
+          <div class="detail-subtitle" style="margin-top: 20px;"><i class="fa-light fa-role"></i>Concept Artist</div>
+          <div class="detail-subtitle" style="margin: 20px 0;"><i class="fa-light fa-envelope"></i>hailegiorgis@gmail.com</div>
+          <div class="detail-subtitle"><i class="fa-light fa-phone"></i>+251-911612542</div>
+          <div class="detail-buttons">      
+            <button class="detail-button" onclick="popupDisplay('popup')">
+            <i class="fa-light fa-user"></i>
+            Update Profile
+            </button>
+          </div>
+          </div>
+        </div>
+      <div class="chat-area">
+      <div class="chat-area-header">
+        <div class="chat-area-group">
+        </div>
+        <i class="fa-light fa-add" onclick="popupDisplay('popup-project')"></i>
+      </div>
+      <div class="chat-area-main">
+        <div class="progress-card">
+          <div class="project-progress">
+            <div>
+              <div class="circular-progress">
+                <span class="progress-value">0%</span>
+              </div>
+              <div class="text">
+                <h5>Created Project: <span>3</span></h5>
+              <h5>Total Task: <span>128</span></h5>
+              <h5>Total Users: <span>7</span></h5>
+              </div>
+            </div>
+          </div>
+          <div class="project-progress">
+            <div>
+              <div class="circular-my-progress">
+                <span class="my-progress-value">0%</span>
+              </div>
+              <div class="text" id="my-progress">
+                <h5>Work on Project: <span>5</span></h5>
+              <h5>Total Task: <span>128</span></h5>
+              <h5>Total Users: <span>7</span></h5>
+              </div>
+            </div>
+            </div>
+          <div class="project-progress">
+            <div>
+              <div class="circular-task-progress">
+                <span class="task-progress-value">0%</span>
+              </div>
+              <div class="text" id="task-progress">
+                <h5>Completed Project: <span>2</span></h5>
+              <h5>With progress: <span>99%</span></h5>
+              </div>
+            </div>
+          </div>
+          <div class="project-progress">
+            <div>
+              <div class="circular-collabe-progress">
+              <span class="collabe-progress-value">0%</span>
+            </div>
+            <div class="text" id="collabe-progress">
+              <h5>Rated: <span>4.9</span></h5>
+            <h5>Total feedback: <span>43</span></h5>
+            <h5>Start collected: <span>123</span></h5>
+            </div>
+          </div>
+          </div>
+      </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="update-user" id="popup-project">
+    <div class="container update">        
+        <div class="submit-form">
+            <h3><i class="fa-light fa-close" onclick="popupDisplayNone('popup-project')"></i></h3>
+            <h4>Create Project</h4>
+            <form id="updateProfileForm" enctype="multipart/form-data">
+                <label for="username">Title:</label>
+                <input type="text" id="tilte" name="title" placeholder="My Project" required>
+                <label for="email">Description:</label>
+                <textarea name="description" id="description" placeholder="Here project description"></textarea>
+                <label for="profile_image">Start Date</label>
+                <input type="date" id="sdate" name="sdate" required>
+                <label for="profile_image">End Date</label>
+                <input type="date" id="edate" name="edate" required>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+  </div>
+  <script  src="js/script.js"></script>
+  <script>
+      progress(0, 40, 30, ".progress-value", ".circular-progress", "#59c87c");
+      progress(0, 67, 30, ".my-progress-value", ".circular-my-progress", "#c85959");
+      progress(0, 89, 30, ".task-progress-value", ".circular-task-progress", "#59a7c8");
+      progress(0, 50, 30, ".collabe-progress-value", ".circular-collabe-progress", "#c8c659");
+    </script>
+</body>
+</html>

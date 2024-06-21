@@ -1,0 +1,101 @@
+:root {
+  --body-bg-color: #e5ecef;
+  --theme-bg-color: #fff;
+  --settings-icon-hover: #9fa7ac;
+  --developer-color: #f9fafb;
+  --input-bg: #f8f8fa;
+  --input-chat-color: #a2a2a2;
+  --border-color: #eef2f4;
+  --body-font: "Manrope", sans-serif;
+  --body-color: #273346;
+  --settings-icon-color: #c1c7cd;
+  --msg-message: #969eaa;
+  --chat-text-bg: #f1f2f6;
+  --theme-color: #444444;
+  --msg-date: #c0c7d2;
+  --button-bg-color: #f3f7fa;
+  --button-color: var(--theme-color);
+  --detail-font-color: #919ca2;
+  --msg-hover-bg: rgba(238, 242, 244, 0.4);
+  --chat-header-bg: white;
+}
+
+.dark-mode {
+  --body-bg-color: #1d1d1d;
+  --theme-bg-color: #27292d;
+  --border-color: #323336;
+  --body-color: #d1d1d2;
+  --msg-hover-bg: rgba(47, 50, 56, 0.54);
+  --chat-text-bg: #383b40;
+  --chat-text-color: #b5b7ba;
+  --msg-date: #626466;
+  --msg-message: var(--msg-date);
+  --input-bg: #2f3236;
+  --chat-header-bg: #27292d 78%;
+  --settings-icon-color: #7c7e80;
+  --developer-color: var(--border-color);
+  --button-bg-color: #393b40;
+  --button-color: var(--body-color);
+  --input-chat-color: #6f7073;
+  --detail-font-color: var(--input-chat-color);
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  font-family: var(--body-font);
+  color: var(--body-color);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--theme-bg-color);
+  max-width: 1600px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  height: 120px;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  right: -100px;
+  z-index: 10;
+  scale: 1.25;
+  transition: 0.5s;
+  transform: translateX(200px);
+}
