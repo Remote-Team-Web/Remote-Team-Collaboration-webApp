@@ -50,3 +50,43 @@ document.addEventListener('click', (event) => {
       menuTurnBtn.style.transform = 'rotateZ(180deg)';
   }
 });
+
+function progress(start, end, speed, valueClass, circleClass, barColor) {
+  let progressValue = document.querySelector(valueClass);
+  let circularProgress = document.querySelector(circleClass);
+  let progressStartValue = start;
+
+  let progressInterval = setInterval(() => {
+      progressStartValue++;
+      progressValue.textContent = `${progressStartValue}%`;
+      circularProgress.style.background = `conic-gradient(${barColor} ${progressStartValue * 3.6}deg, var(--button-color) 0deg)`;
+
+      if (progressStartValue === end) {
+          clearInterval(progressInterval);
+      }
+  }, speed);
+}
+
+
+const btns = document.querySelectorAll('.btn');
+const dropMenus = document.querySelectorAll('.drop-menu');
+
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        removeActive();
+        btn.classList.add('active');
+        document.querySelector(btn.dataset.target).classList.add('active');
+    })
+})
+
+const removeActive = () => {
+    btns.forEach(btn => btn.classList.remove('active'));
+    dropMenus.forEach(dropmenu => dropmenu.classList.remove('active'));
+}
+
+window.onclick = (e) => {
+    if (!e.target.matches('.btn')) {
+        removeActive()
+    }
+}
+

@@ -442,3 +442,196 @@ aside .curve{
   flex-direction: column;
   position: relative;
 }
+
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.chat-area{
+  scroll-behavior: smooth;
+}
+
+.chat-area::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 25px;
+}
+.chat-area::-webkit-scrollbar-track{
+  background: #f1f1f1d7;
+}
+.chat-area::-webkit-scrollbar-thumb{
+  background: #707070;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.chat-area::-webkit-scrollbar-thumb:hover{
+  background: #787878;
+}
+
+.chat-area-header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--chat-header-bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.200);
+}
+.chat-area-header i{
+  background: var(--button-bg-color);
+  padding: 12px 13px;
+  color: var(--button-color);
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.3s
+}
+.chat-area-header button{
+  background: var(--button-bg-color);
+  color: var(--button-color);
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px 0 0;
+  cursor: pointer;
+  transition: 0.3s
+}
+.chat-area-header i:hover{
+  background: rgb(68, 125, 165);
+  color: white;
+}
+.chat-area-header button:hover{
+  background: rgba(68, 125, 165);
+  color: white;
+}
+.chat-area-header button:hover > i{  
+  background: rgba(68, 125, 165);
+  color: white;
+}
+.chat-area-profile {
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat-area-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.chat-area-main {
+  flex-grow: 1;
+  height: 800px;
+}
+.chat-area-main .project-team{
+  padding: 20px;
+}
+.chat-area-main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.chat-area-main .cards-tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.chat-area-main .cards .card{
+  height: 200px;
+  background: var(--button-bg-color);
+  border-radius: 5px;
+  box-shadow: 0 3px 7px rgba(39, 32, 32, 0.389);
+  margin: 10px;
+  padding: 10px;  
+  filter: opacity(0.7);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.chat-area-main .cards .task{
+  height: 85px;
+}
+
+.chat-area-main .cards .task .task-type{
+  display: block;
+  padding: .5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.chat-area-main .cards .task .task-type .task-name{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-area-main .cards .task .task-type .task-name .task-status{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-area-main .cards .task .task-type .task-name .task-status i{
+  font-size: 12px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.chat-area-main .cards .task .task-description{
+  font-size: small;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+}
+.chat-area-main .cards .task .users-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-area-main .cards .task .users-list .team {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-right: -7px;
+  border: 2px solid white;
+  display: flex;
+  overflow: hidden;
+}
+.chat-area-main .cards .task .users-list .team img {
+  width: 25px;
+}
+
+.chat-area-main .cards .card:hover{
+  filter: opacity(1);
+}
+.chat-area-main .cards .card .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.chat-area-main .cards .card .title .name{
+  display: flex;
+}
+.chat-area-main .cards .card hr{
+  margin: 5px 20px;
+}
+.chat-area-main .cards .card p {
+  font-size: 12px;
+  margin: 10px;
+  height: 70px;
+}
+.chat-area-main .cards .card .foot{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.chat-area-main .cards .card .foot .chat-area-group{
+  scale: 0.7;
+  margin: 0;
+}
+.chat-area-main .cards .card .foot p{
+  margin: 0;
+  height: 0;
+}
+.chat-area-main .cards .card h4{
+  font-size: 14px;
+  margin: 5px;
+}
