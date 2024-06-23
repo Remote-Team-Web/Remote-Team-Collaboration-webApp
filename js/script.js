@@ -90,3 +90,52 @@ window.onclick = (e) => {
     }
 }
 
+
+const tasks = document.querySelectorAll(".task-type");
+const all_status = document.querySelectorAll(".task-list");
+let draggableTask;
+
+tasks.forEach((task) => {
+  task.addEventListener("dragstart", dragStart);
+  task.addEventListener("dragend", dragEnd);
+});
+
+function dragStart() {
+  draggableTask = this;
+  setTimeout(() => {
+    this.style.display = "none";
+  }, 50);
+}
+
+function dragEnd() {
+  draggableTask = null;
+  setTimeout(() => {
+    this.style.display = "block";
+  }, 50);
+}
+
+all_status.forEach((status) => {
+  status.addEventListener("dragover", dragOver);
+  status.addEventListener("dragenter", dragEnter);
+  status.addEventListener("dragleave", dragLeave);
+  status.addEventListener("drop", dragDrop);
+});
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter() {
+  this.style.border = "3px dashed rgba(176, 176, 176, 0.454)";
+}
+
+function dragLeave() {
+  this.style.border = "2px dashed rgba(176, 176, 176, 0.454)";
+}
+
+function dragDrop() {
+  this.style.border = "2px dashed rgba(176, 176, 176, 0.454)";
+  this.appendChild(draggableTask);
+
+}
+
