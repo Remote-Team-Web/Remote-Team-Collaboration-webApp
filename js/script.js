@@ -139,3 +139,31 @@ function dragDrop() {
 
 }
 
+
+
+const emojis = ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '😗', '😙', '😚', '☺️', '🙂', '🤗', '🤔', '😐', '😑', '😶', '🙄', '😏', '😣', '😥', '😮', '🤐', '😯', '😪', '😫', '😴', '😌', '🤓', '😛', '😜', '😝', '🤤', '😒', '😓', '😔', '😕', '🙃', '🤑', '😲', '☹️', '🙁', '😖', '😞', '😟', '😤', '😢', '😭', '😦', '😧', '😨', '😩', '😬', '😰', '😱', '😳', '😵', '😡', '😠', '😇', '🤠', '🤡', '🤥', '🤓', '🤒', '🤕', '🤑', '🤢', '🤧', '😷', '🤮', '🤫', '🤭', '🧐'];
+
+const emojiButton = document.getElementById('emojiButton');
+const emojiPicker = document.getElementById('emojiPicker');
+const emojiInput = document.getElementById('emojiInput');
+
+emojiButton.addEventListener('click', () => {
+    emojiPicker.style.display = emojiPicker.style.display === 'none' ? 'block' : 'none';
+});
+
+emojis.forEach(emoji => {
+    const span = document.createElement('span');
+    span.textContent = emoji;
+    span.addEventListener('click', () => {
+        emojiInput.value += emoji;
+        emojiPicker.style.display = 'none';
+    });
+    emojiPicker.appendChild(span);
+});
+
+document.addEventListener('click', (event) => {
+    if (!emojiButton.contains(event.target) && !emojiPicker.contains(event.target)) {
+        emojiPicker.style.display = 'none';
+    }
+});
+
