@@ -1,11 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-body{
-    width: 100%;
-    height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: roboto;
 }
 .container{
     display: flex;
@@ -18,21 +14,62 @@ body{
     width: 300px;
 }
 .submit-form .image{
-    width: 120px;
-    background-size: cover;  
-    align-content: center;    
+    width: 120px;   
+    margin: 10px 90px;
+    
+}
+.submit-form #logo{
+    width: 80px;   
+    margin: 0;
+}
+.submit-form #logo img{
+    width: 120px;   
     margin: 10px 90px;
 }
-.submit-form .profile-img{
+.submit-form .profile-img {
+    width: 120px;
     height: 120px;
     border-radius: 50%;
+    background-size: cover;
+    align-content: center;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    position: relative;
 }
-.submit-form img{
-    width: 120px;
+
+.submit-form .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
+.submit-form .profile-img .change-image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgba(214, 214, 214, 0.815);
+    opacity: 0.4;
+    transition: 0.5s;
+
+}
+
+.submit-form .profile-img:hover > .change-image{
+    opacity: 1;
+}
+
 .submit-form h4{
     text-align: center;
+    margin: 10px 0;
 }
 .submit-form form{
     display:grid;
@@ -44,12 +81,21 @@ body{
 .submit-form form input{
     padding: 10px;
     border: 1px solid rgba(51, 51, 51, 0.308);
+    background: none;
+    border-radius: 5px;
+    margin: 7px 0;
+}
+.submit-form form select{
+    padding: 10px;
+    border: 1px solid rgba(51, 51, 51, 0.308);
+    background: none;
     border-radius: 5px;
     margin: 10px 0;
 }
 .submit-form form textarea{
     padding: 10px;
     border: 1px solid rgba(51, 51, 51, 0.308);
+    background: none;
     border-radius: 5px;
     margin: 10px 0;
     height: 100px;
@@ -57,14 +103,14 @@ body{
 }
 .submit-form form button{
     padding: 10px 5px;
-    background: black;
+    background: rgb(65, 160, 105);
     border: none;
     border-radius: 5px;
     color: white;
     transition: 0.2s;
 }
 .submit-form form button:hover{
-    background: rgba(31, 31, 31, 0.945);
+    background: rgba(84, 177, 123, 0.774);
 }
 .submit-form form #linker{
     padding: 10px 0;
@@ -73,6 +119,18 @@ body{
 .submit-form form label a{
     text-decoration: none;
     color: rgb(90, 90, 90);
+} 
+.submit-form p{
+    width: 100%;
+    background: rgba(0, 128, 0, 0.363);
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 0;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
 }
 .update-user{
     position: relative;
@@ -90,7 +148,7 @@ body{
     display: none;
 }
 .update{
-    background: rgb(255, 255, 255);
+    background: rgb(255, 255, 255, 0.9);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.233);
     width: fit-content;
     height: fit-content;

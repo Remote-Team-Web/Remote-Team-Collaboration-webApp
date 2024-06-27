@@ -83,13 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (user.error) {
                 alert('Error: ' + user.error);
             } 
+
             else {
                 document.getElementById('uname').innerHTML = user.username;
-                document.getElementById('urole').innerHTML = "user.role";
-                document.getElementById('upnumber').innerHTML = "user.pnumber";
+                document.getElementById('urole').innerHTML = user.role;
+                document.getElementById('upnumber').innerHTML = user.phone_number;
                 document.getElementById('uemail').innerHTML = user.email;
                 document.getElementById('username').value = user.username;
                 document.getElementById('email').value = user.email;
+                document.getElementById('role').value = user.role;
+                document.getElementById('pnumber').value = user.phone_number;
                 document.getElementById('user_image').setAttribute("src", user.profile_image.slice(6));
                 document.getElementById('side-user-image').setAttribute("src", user.profile_image.slice(6));
                 document.getElementById('header-user-image').setAttribute("src", user.profile_image.slice(6));

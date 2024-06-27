@@ -31,7 +31,7 @@ while ($task = $tasks_result->fetch_assoc()) {
     $tasks[] = $task;
 }
 
-$sql = "SELECT users.id, users.username, project_users.role,users.profile_image 
+$sql = "SELECT users.id, users.username, users.role,users.profile_image 
         FROM users 
         JOIN project_users ON users.id = project_users.user_id 
         WHERE project_users.project_id='$project_id' AND project_users.status = 'accepted'";

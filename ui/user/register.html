@@ -9,17 +9,19 @@
 <body>
     <div class="container">
         <div class="submit-form">
-            <div class="image">
+            <div class="image" id="logo">
                 <img src="../image/logo.png" alt="">
             </div>
         <h4>REGISTER</h4>
         <form id="registerForm">
-            <label for="username">Username:</label>
+            <input type="text" id="fname" name="fname" placeholder="First Name" required>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required>
             <input type="text" id="username" name="username" placeholder="Username" required>
-            <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Email" required>
-            <label for="password">Password:</label>
+            <input type="text" id="role" name="role" placeholder="Role" required>
+            <input type="number" id="pnumber" name="pnumber" placeholder="Phone Number" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" required>
             <button type="submit">Register</button>
             <label id="linker">Already have an account? <a href="login.html">Login</a></label>
         </form>

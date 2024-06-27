@@ -17,18 +17,18 @@ document.getElementById('createProjectForm')?.addEventListener('submit', functio
         type: "create_project" 
     };
     
-    sendAjaxRequest('POST','./services/api.php', data, handleResponse);
+    sendAjaxRequest('POST','/pm/services/api.php', data, handleResponse);
 }); 
 
 
 document.getElementById('loginForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
     const data = { 
-        email: email,
+        username: username,
         password: password, 
         type: "login" 
     };
@@ -41,15 +41,30 @@ document.getElementById('registerForm')?.addEventListener('submit', function(e) 
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const confirm_password = document.getElementById('cpassword').value;
+    const role = document.getElementById('role').value;
+    const pnumber = document.getElementById('pnumber').value;
+    const fname = document.getElementById('fname').value;
+    const lname = document.getElementById('lname').value;
+
+
+    if (password !== confirm_password) {
+        alert('Passwords do not match');
+        return;
+    }
 
     const data = { 
         username: username, 
-        email: email, password: 
-        password, type: "register" 
+        email: email, 
+        password: password,
+        role: role,
+        fname: fname, 
+        lname: lname, 
+        pnumber: pnumber, 
+        type: "register" 
     };
-    sendAjaxRequest('POST','../../services/api.php', data, handleResponse);
+    sendAjaxRequest('POST', '../../services/api.php', data, handleResponse);
 });
-
 
 
 document.getElementById('createTaskForm')?.addEventListener('submit', function(e) {
@@ -72,7 +87,7 @@ document.getElementById('createTaskForm')?.addEventListener('submit', function(e
         type: "create_task"
     };
 
-    sendAjaxRequest('POST','./services/api.php', data, handleResponse);
+    sendAjaxRequest('POST','/pm/services/api.php', data, handleResponse);
 });
 document.getElementById('createLinkForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -88,7 +103,7 @@ document.getElementById('createLinkForm')?.addEventListener('submit', function(e
         type: "zoom_link"
     };
 
-    sendAjaxRequest('POST','./services/api.php', data, handleResponse);
+    sendAjaxRequest('POST','/pm/services/api.php', data, handleResponse);
 });
 
 document.getElementById('respondInvitationForm')?.addEventListener('submit', function(e) {
@@ -103,7 +118,7 @@ document.getElementById('respondInvitationForm')?.addEventListener('submit', fun
         type: "respond_invitation"
     };
 
-    sendAjaxRequest('POST','./services/api.php', data, handleResponse);
+    sendAjaxRequest('POST','/pm/services/api.php', data, handleResponse);
 });
 
 
@@ -119,7 +134,7 @@ document.getElementById('inviteUserForm')?.addEventListener('submit', function(e
         type: "invite_user" 
     };
 
-    sendAjaxRequest('POST','./services/api.php', data, handleResponse);
+    sendAjaxRequest('POST','/pm/services/api.php', data, handleResponse);
 });
 
 
@@ -138,7 +153,7 @@ document.getElementById('updateProjectForm')?.addEventListener('submit', functio
         description: updatedDescription,
         type: "update_project"
     };
-    sendAjaxRequest('POST','./services/api.php', data, handleResponse);
+    sendAjaxRequest('POST','/pm/services/api.php', data, handleResponse);
 
 });
 
@@ -171,7 +186,7 @@ function handleResponse(response) {
         if (response.type == 'login') {
             alert(response.message);
             var user = JSON.parse(response.user);
-            sessionStorage.setItem("user", user.email);
+            sessionStorage.setItem("username", user.username);
             window.location.href = '../../index.html';
         } 
 

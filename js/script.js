@@ -28,7 +28,10 @@ function popupDisplayNone(id) {
       element.style.display = "none";
       element.style.transition = "0.3s";
   }
+  window.location.reload();
 }
+
+
 const menubtn = document.getElementById('menubtn');
 const menu = document.getElementById('menu');
 const gearTurn = document.getElementById('gear-turn');
@@ -90,6 +93,46 @@ window.onclick = (e) => {
     }
 }
 
+const imageInput = document.getElementById('image-update');
+const browseImageBtn= document.getElementById('browse-img-btn');
+
+browseImageBtn.addEventListener('click', () => {
+  imageInput.click();
+});
+
+
+
+function addDragAndDropHandlers(element) {
+  const taskBacklog = document.getElementById('section-backlog');
+  const taskInProgress = document.getElementById('section-in-progress');
+  const taskCompleted = document.getElementById('section-completed');
+  element.addEventListener("dragstart", function(e) {
+      e.dataTransfer.setData("text/plain", e.target.id);
+  });
+  
+
+  [taskBacklog, taskInProgress, taskCompleted].forEach(taskContainer => {
+      taskContainer.addEventListener("dragover", function(e) {
+          e.preventDefault();
+      });
+      taskContainer.addEventListener("drop", function(e) {
+          e.preventDefault();
+          const taskId = e.dataTransfer.getData("text/plain");
+          const taskElement = document.getElementById(taskId);
+          taskContainer.appendChild(taskElement);
+
+          let newStatus;
+          if (taskContainer === taskBacklog) {
+              newStatus = "backlog";
+          } else if (taskContainer === taskInProgress) {
+              newStatus = "in_progress";
+          } else if (taskContainer === taskCompleted) {
+              newStatus = "completed";
+          }
+          updateTask(taskId, newStatus);
+      });
+  });
+}
 
 const tasks = document.querySelectorAll(".task-type");
 const all_status = document.querySelectorAll(".task-list");
@@ -135,17 +178,52 @@ function dragLeave() {
 
 function dragDrop() {
   this.style.border = "2px dashed rgba(176, 176, 176, 0.454)";
-  this.appendChild(draggableTask);
-
+  // this.appendChild(draggableTask);
 }
 
+function updateTask(task_id, status) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('project_id');
+  const xhrUpdate = new XMLHttpRequest();
+  xhrUpdate.open('POST', './services/api.php', true);
+  xhrUpdate.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+  xhrUpdate.onload = function() {
+      if (xhrUpdate.status === 200) {
+          const response = JSON.parse(xhrUpdate.responseText);
+          if (response.success) {
+             window.location.reload();
+          } else {
+              alert('Error: ' + response.error);
+          }
+      } else {
+          alert('Request failed. Returned status of ' + xhrUpdate.status);
+      }
+  };
+
+  const data = JSON.stringify({
+      status: status,
+      task_id: task_id,
+      type: "update_task"
+  });
+
+  xhrUpdate.send(data);
+}
+
+const close_btns = document.querySelectorAll(".close");
+
+close_btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.style.display = "none";
+  });
+});
 
 
 const emojis = ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '😗', '😙', '😚', '☺️', '🙂', '🤗', '🤔', '😐', '😑', '😶', '🙄', '😏', '😣', '😥', '😮', '🤐', '😯', '😪', '😫', '😴', '😌', '🤓', '😛', '😜', '😝', '🤤', '😒', '😓', '😔', '😕', '🙃', '🤑', '😲', '☹️', '🙁', '😖', '😞', '😟', '😤', '😢', '😭', '😦', '😧', '😨', '😩', '😬', '😰', '😱', '😳', '😵', '😡', '😠', '😇', '🤠', '🤡', '🤥', '🤓', '🤒', '🤕', '🤑', '🤢', '🤧', '😷', '🤮', '🤫', '🤭', '🧐'];
 
 const emojiButton = document.getElementById('emojiButton');
 const emojiPicker = document.getElementById('emojiPicker');
-const emojiInput = document.getElementById('emojiInput');
+const emojiInput = document.getElementById('messageInput');
 
 emojiButton.addEventListener('click', () => {
     emojiPicker.style.display = emojiPicker.style.display === 'none' ? 'block' : 'none';
@@ -166,4 +244,13 @@ document.addEventListener('click', (event) => {
         emojiPicker.style.display = 'none';
     }
 });
+
+const fileInput = document.getElementById('fileInput');
+const browseButton = document.getElementById('browseButton');
+
+browseButton.addEventListener('click', () => {
+    fileInput.click();
+});
+
+
 

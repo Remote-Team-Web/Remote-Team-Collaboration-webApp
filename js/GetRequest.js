@@ -10,22 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if(path === '/pm/project_details.html'){
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('project_id');        
-        sendAjaxGetRequest('GET',`./services/includes/get_project_details.php?project_id=${projectId}`, taskSelectUsers);
+        sendAjaxGetRequest('GET',`/pm/services/includes/get_project_details.php?project_id=${projectId}`, taskSelectUsers);
     }
 
     if(path === "/pm/discussion_board.html"){
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('project_id');
-        sendAjaxGetRequest('GET', `./services/includes/get_project_details.php?project_id=${projectId}`, projectDetails);
+        sendAjaxGetRequest('GET', `/pm/services/includes/get_project_details.php?project_id=${projectId}`, projectDetails);
     }
     if(path === "/pm/project_details.html"){
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('project_id');
     
-        sendAjaxGetRequest('GET', `./services/includes/get_project_details.php?project_id=${projectId}`, projectDetails);
+        sendAjaxGetRequest('GET', `/pm/services/includes/get_project_details.php?project_id=${projectId}`, projectDetails);
         
-        sendAjaxGetRequest('GET',`./services/includes/get_project_details.php?project_id=${projectId}`, projectForUpdate);
-        sendAjaxGetRequest('GET',`./services/includes/get_zoom_link.php?project_id=${projectId}`, zoomLinkUpdate);
+        sendAjaxGetRequest('GET',`/pm/services/includes/get_project_details.php?project_id=${projectId}`, projectForUpdate);
+        sendAjaxGetRequest('GET',`/pm/services/includes/get_zoom_link.php?project_id=${projectId}`, zoomLinkUpdate);
        
     }
     
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('project_id');
     
-        sendAjaxGetRequest('GET', `./services/includes/get_workon_details.php?project_id=${projectId}`, workOnProjectDetails);
+        sendAjaxGetRequest('GET', `/pm/services/includes/get_workon_details.php?project_id=${projectId}`, workOnProjectDetails);
 
        
     }
@@ -96,9 +96,12 @@ function taskSelectUsers(response) {
 
 function projectDetails(response) {
    
+
     if (response.project) {
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('project_id');
+        const discussionBoardLink = document.getElementById('discussionLink');
+        discussionBoardLink.href = `./discussion_board.html?project_id=${projectId}`;
         const projectName = document.getElementById('projectName');
         const projectDescription = document.getElementById('projectDescription');    
         const userList = document.getElementById('userList');
@@ -184,8 +187,6 @@ function projectDetails(response) {
     
     
     /// Link to Discussboard
-    const discussionBoardLink = document.getElementById('discussionBoardLink');
-    discussionBoardLink.href = `./discussion_board.html?project_id=${projectId}`;
     
     
         

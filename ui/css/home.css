@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.main-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+nav{
+    width: 100%;
+    height: 100%;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.user-info {
+    width: 450px;
+    padding: 20px 50px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: white;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.253);
+}
+.user-info i{
+    padding: 10px 15px;
+    font-size: 18px;
+    transition: 0.3s;
+    position: relative;
+}
+.user-info i h6{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    font-size: 10px;
+    color: rgb(255, 0, 0);
+}
+.user-info i:hover{
+    background: rgba(170, 170, 170, 0.226);
+    border-radius: 5px;
+}
+.user-info i span{
+    margin-left: 5px;
+}
+.user-info .notification{
+    position: absolute;
+    padding: 10px;
+    width: 70%;
+    top: 70px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.192);
+    background: white;
+    display: none;
+}
+.user-info .notification ul {
+    display: block;
+}
+.user-info .notification ul li{
+    padding: 5px;
+    list-style: none;
+    font-size: 12px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-info .notification li:hover{    
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.192);
+}
+.user-info .notification ul span{
+    font-size: 12px;
+    color: gray;
+    right: 0;
+    text-align: center;
+}
+
+main{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+main .left{
+    width: 10%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 7px rgba(0, 0, 0, 0.253); */
+}
+main .left .user-profile{
+   
+    padding: 50px;
+}
+main .left .user-profile img{
+    width: 100px;
+    margin: 20px;
+    border-radius: 50%;
+    border: 3px solid rgba(150, 71, 71, 0.568);
+    padding: 5px;
+}
+main .left .user-profile p{
+    text-align: center;
+    margin: 10px;
+}
+main .mid{
+    width: 60%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.253);
+}
+main .right{
+    width: 10%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 7px rgba(0, 0, 0, 0.253); */
+}

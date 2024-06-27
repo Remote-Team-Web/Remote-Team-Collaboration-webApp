@@ -6,7 +6,11 @@
 <link rel="stylesheet" href="ui/css/all.css">
 <link rel="stylesheet" href="ui/css/style.css">
 <link rel="stylesheet" href="ui/css/main.css">
-
+<script>
+  if(sessionStorage.getItem("username") == null){
+      window.location.href = "./ui/user/login.html";
+  }
+</script>
 </head>
 <body>
   <div class="update-user" id="popup">
@@ -21,13 +25,17 @@
             </div>
             <h4>Update Profile</h4>
             <form id="updateProfileForm" enctype="multipart/form-data">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Username" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="file" id="image-update" name="profile_image" class="hidden-file-input" accept="image/*">
-                <button type="submit">Update</button>
-            </form>
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" placeholder="Username" required disabled>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Email" required>
+              <label for="role">Role:</label>
+              <input type="text" id="role" name="role" placeholder="Role" required>
+              <label for="phoneNumber">Phone Number:</label>
+              <input type="text" id="pnumber" name="pnumber" placeholder="Phone Number" required>
+              <input type="file" id="image-update" name="profile_image" class="hidden-file-input" accept="image/*">
+              <button type="submit">Update</button>
+          </form>
             <p id="user-message"></p>
         </div>
     </div>
@@ -93,11 +101,18 @@
       </div>
       </div>
     </div>
+    <div class="none" style="display: none;">
+        <img src="ui/image/pic0.jpg" alt="" id="side-user-image">
+      <div class="detail-title" id="uname">HGiorgis</div>
+      <div class="detail-subtitle" style="margin-top: 20px;" id="urole"><i class="fa-light fa-role"></i>Concept Artist</div>
+      <div class="detail-subtitle" style="margin: 20px 0;" id="uemail"><i class="fa-light fa-envelope"></i>hailegiorgis@gmail.com</div>
+      <div class="detail-subtitle"  id="upnumber"><i class="fa-light fa-phone"></i>+251-911612542</div>
+    </div>
     <div class="wrapper">
         <div class="detail-area profile-detail" id="display-left">
           <div class="detail-area-header">
             <div class="msg-profile group">
-              <img src="ui/image/pic0.jpg" alt="">
+              <img src="ui/image/uploads/Capture.PNG" alt="">
             </div>
             <div class="detail-title" id="projectName">RTC Project Group</div>
             <div class="detail-subtitle">Created by <span id="projectManager">Hailegiorgis</span></div>
@@ -116,7 +131,7 @@
               <h1 id="no-member"></h1>
             </div>
           </div>
-          <a href="https://twitter.com/HGiogis" class="follow-me" target="_blank">
+          <a href="https://twitter.com/HGiogis" class="follow-me" target="_blank" style="display: none;">
             <i class="fa-brands fa-twitter"></i>
             Follow me on Twitter
             </span>
@@ -130,7 +145,7 @@
           <div class="chat-area-header">
             <div>
               <i class="fa-light fa-arrow-left side-btn" onclick="displaySide('display-left')"></i>
-              <button id="discussionBoardLink"><i class="fa-light fa-screen-users"></i>Create Discussion Board</button>
+              <button id="discussionLink"><i class="fa-light fa-screen-users"></i>Create Discussion Board</button>
             </div>
             <div>
               <button onclick="popupDisplay('popup-project')"><i class="fa-light fa-recycle"></i>Update Project</button>
@@ -239,6 +254,23 @@
         </div>
     </div>
   </div>
+  <div class="update-user" id="popup-response">
+    <div class="container update">        
+        <div class="submit-form">
+            <h3><i class="fa-light fa-close" onclick="popupDisplayNone('popup-response')"></i></h3>
+            <h4>Invitation</h4>
+            <form id="respondInvitationForm">
+              <label for="status">Status:</label>
+              <select id="status" name="status" required>
+                  <option value="accepted">Accept</option>
+                  <option value="declined">Decline</option>
+              </select>
+              <button type="submit">Submit Response</button>
+          </form>
+          <p id="response-message"></p>
+        </div>
+    </div>
+</div>
   <script  src="js/script.js"></script>
   <script src="js/main.js"></script>
   <script src="./js/PostRequest.js"></script>
